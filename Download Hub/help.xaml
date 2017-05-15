@@ -1,0 +1,176 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Download_Hub"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Universal="using:Microsoft.AdMediator.Universal"
+    x:Class="Download_Hub.help"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="allDownloadsAppBarButton" Content="All Downloads" Icon="List" Label="All Downloads" Click="allDownloadsAppBarButton_Click"/>
+                <AppBarButton x:Name="aboutAppBarButton" Icon="Account" Content="About" Label="About" Click="aboutAppBarButton_Click"/>
+                <AppBarButton x:Name="helpAppBarButton" Icon="Help" Content="Help" Label="Help" Click="helpAppBarButton_Click"/>
+
+            </CommandBar.SecondaryCommands>
+            <AppBarButton x:Name="homeAppBarButton" Icon="Home" Content="Home" Click="homeAppBarButton_Click"/>
+            <AppBarButton x:Name="downloadAppBarButton" Icon="Download" Content="Active Downloads" Click="downloadAppBarButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualState0min"/>
+                <VisualState x:Name="VisualState800min">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Hub.Orientation)" Storyboard.TargetName="hub1">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Orientation>Horizontal</Orientation>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="21.333" Storyboard.TargetProperty="(Control.FontSize)" Storyboard.TargetName="hubSection" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="21.333" Storyboard.TargetProperty="(Control.FontSize)" Storyboard.TargetName="hubSection1" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="21.333" Storyboard.TargetProperty="(Control.FontSize)" Storyboard.TargetName="hubSection2" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="textBlock">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="36" Storyboard.TargetProperty="(TextBlock.FontSize)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="VisualState500min">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="500"/>
+                    </VisualState.StateTriggers>
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="textBlock">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="36" Storyboard.TargetProperty="(TextBlock.FontSize)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF507CF1" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Grid.Row="0" Margin="8,12,0,0" >
+            <TextBlock Text="DOWNLOAD HUB" Grid.Row="0" FontSize="24" FontWeight="Bold" Margin="4,0,0,0" Foreground="White" />
+            <TextBlock x:Name="textBlock" Text="Help!!" Grid.Row="1" Foreground="Wheat" FontSize="16"  />
+            
+            
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Universal:AdMediatorControl x:Name="AdMediator_29C120" Height="600" Grid.Row="0" Grid.Column="0" Id="AdMediator-Id-1ACB1A44-BC34-4CC6-A3D0-906A06E1890E" HorizontalAlignment="Left" Visibility="Collapsed" VerticalAlignment="Center" Width="250"/>
+            <Hub x:Name="hub1" Grid.Row="0" Grid.Column="1" Orientation="Vertical" >
+                <HubSection x:Name="hubSection" MinHeight="400" MaxWidth="800">
+                    <HubSection.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Videos" Foreground="White" FontSize="36"/>
+                        </DataTemplate>
+                    </HubSection.HeaderTemplate>
+                    <HubSection.Background>
+                        <ImageBrush ImageSource="/Assets/HelpPageImages/helpVideo.jpg" Opacity="0.5"/>
+                    </HubSection.Background>
+                    <DataTemplate>
+                        <TextBlock Margin="12,0,0,0"  x:Name="videosTextBlock" TextWrapping="Wrap" Foreground="White">
+							<Run Text="1. Click on the Videos button."/>
+							<LineBreak/>
+							<Run Text="2. As soon as you land on the videos page, the supported website will be loaded."/>
+							<LineBreak/>
+							<Run Text="3.Select the video you want to download."/>
+							<LineBreak/>
+							<Run Text="4.On the page where you can play the video, tap on the download icon located at the bottom of the page."/>
+							<LineBreak/>
+							<Run Text="5.Choose the quality of the video. "/>
+							<LineBreak/>
+                            <Run Text="6.Finally, choose the location to save, either in the default folder or in a new location and Voila...your download will be started."/>
+							<LineBreak/>
+                        </TextBlock>
+                    </DataTemplate>
+                </HubSection>
+                <HubSection x:Name="hubSection1" MinHeight="400" MaxWidth="800">
+                    <HubSection.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Music" Foreground="White" FontSize="36"/>
+                        </DataTemplate>
+                    </HubSection.HeaderTemplate>
+                    <HubSection.Background>
+                        <ImageBrush ImageSource="/Assets/HelpPageImages/helpMusic.jpg" Opacity="0.5"/>
+                    </HubSection.Background>
+                    <DataTemplate>
+                        <TextBlock Margin="12,0,0,0" Foreground="White" x:Name="musicTextBlock" TextWrapping="Wrap" Text="">
+							<Run Text="1. Click on the Music button."/>
+							<LineBreak/>
+							<Run Text="2. At the musics Page, search what you wanna download."/>
+							<LineBreak/>
+							<Run Text="3.A list of related downloadable music will be provided to you."/>
+							<LineBreak/>
+							<Run Text="4.Click on the one you wanna download."/>
+                            <LineBreak/>
+							<Run Text="5.Choose from the options to save, either in the default folder or in a new location and Voila...your download will be started."/>
+                        </TextBlock>
+                    </DataTemplate>
+                </HubSection>
+                <HubSection x:Name="hubSection2" MinHeight="400" MaxWidth="800">
+                    <HubSection.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Misc." Foreground="White" FontSize="36"/>
+                        </DataTemplate>
+                    </HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Margin="12,0,0,0" Foreground="White" x:Name="miscTextBlock" TextWrapping="Wrap" Text="">
+							<Run Text="1.To view the current downloads, click on the download icon in the command bar at the bottom."/>
+							<LineBreak/>
+							<Run Text="2.In the active downloads page, tap on any download to pause, resume or cancel it(If the website doesnt support resuming, then the download automatically restarts)."/>
+							<LineBreak/>
+							<Run Text="3.If you have any problems or complaints, directly mail me. The info is provided in the about page(in the bottom app bar of the main page)."/>
+							<LineBreak/>
+							<Run Text="4.In Settings, select the default folder to set the default location for download."/>
+							<LineBreak/>
+							<Run Text="5.You can check your download history in the all downloads page. To remove any item, just double tap it."/>
+                        </TextBlock>
+                    </DataTemplate>
+                </HubSection>
+            </Hub>
+            <Universal:AdMediatorControl x:Name="AdMediator_60A27A" Height="600" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Id="AdMediator-Id-1427DCDF-652F-4B48-9776-F6D740D4D5F3" Visibility="Collapsed" Width="250"/>
+            <Universal:AdMediatorControl x:Name="AdMediator_4B6DE1" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center"  Height="50" Id="AdMediator-Id-DDBC1706-322F-45B5-88F9-452474943659" VerticalAlignment="Bottom"  Width="320"/>
+
+
+        </Grid>
+
+
+    </Grid>
+</Page>

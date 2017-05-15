@@ -1,0 +1,255 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Download_Hub"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ViewModel"
+    xmlns:Universal="using:Microsoft.AdMediator.Universal"
+    x:Class="Download_Hub.videos"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="ViewDataTemplate">
+            <StackPanel Margin="10,10,0,0" Height="100" Width="100" Background="{ThemeResource SystemControlBackgroundAccentBrush}">
+                <TextBlock Text="{Binding Extension}" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding stringDimension}" TextWrapping="Wrap" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+        <vm:VideosViewModel x:Key="viewModel"/>
+    </Page.Resources>
+
+
+    <Page.BottomAppBar>
+        <CommandBar DataContext="{StaticResource viewModel}">
+            <AppBarButton Icon="Back" x:Name="backAppBarButton" Click="backAppBarButton_Click"/>
+            <AppBarButton Icon="Download" x:Name="downloadAppBarButton" Click="downloadAppBarButton_Click" IsEnabled="False"/>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Home" Click="homeAppBarButton_Click" x:Name="homeAppBarButton"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+
+    <Grid Name="grid1">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualState500min">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="500"/>
+                    </VisualState.StateTriggers>
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="textBlock">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="36" Storyboard.TargetProperty="(TextBlock.FontSize)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.MaxWidth)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>720</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <VerticalAlignment>Center</VerticalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="VisualState600min">
+                    <VisualState.Setters>
+                        <Setter Target="AdMediator_054507.(UIElement.Visibility)" Value="Visible"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="textBlock">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="36" Storyboard.TargetProperty="(TextBlock.FontSize)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.MaxWidth)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>720</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <VerticalAlignment>Center</VerticalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="VisualState800min">
+                    <VisualState.Setters>
+                        <Setter Target="AdMediator_054507.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="AdMediator_38E174.(UIElement.Visibility)" Value="Visible"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="textBlock">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="36" Storyboard.TargetProperty="(TextBlock.FontSize)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.MaxWidth)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>720</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="stackPanel">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <VerticalAlignment>Center</VerticalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF507CF1" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="8,12,0,0">
+            <TextBlock Text="DOWNLOAD HUB" Grid.Row="0" FontSize="24" FontWeight="Bold" Margin="4,0,0,0" Foreground="White" />
+            <TextBlock Name="textBlock" Text="Videos" Grid.Row="1" Foreground="Wheat" FontSize="16"  />
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Universal:AdMediatorControl Name="AdMediator_38E174" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Visibility="Collapsed" Height="600" Id="AdMediator-Id-06A7D580-FEF6-4EB9-BD32-E4EC12BA9203" VerticalAlignment="Center"  Width="160"/>
+
+            <Grid x:Name="webElementGrid" Grid.Row="0" Grid.Column="1" DataContext="{StaticResource viewModel}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Name="selectionFlyout" Orientation="Vertical"  VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding SelectionFlyout}">
+                    <TextBlock Text="Select one option" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <Button Name="defaultFolder" Click="defaultFolder_Click" Content="Default Folder" HorizontalAlignment="Center" Margin="8,8,8,8"/>
+                    <Button Name="selectFolder" Click="selectFolder_Click" Content="Select Folder" HorizontalAlignment="Center" Margin="0,8,0,8"/>
+                </StackPanel>
+                <Grid BorderBrush="White"  BorderThickness="3" Grid.Row="0" Margin="4,4,4,4">
+                    <WebView Name="youtubeWebElement" NavigationStarting="youtubeWebElement_NavigationStarting" NavigationCompleted="youtubeWebElement_NavigationCompleted"  NavigationFailed="youtubeWebElement_NavigationFailed"   Visibility="{Binding WebViewVisible}"/>
+                </Grid>
+                <StackPanel Name="pageLoadingStack" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ProgressRing Name="pageLoadingRing" Visibility="Visible" />
+                    <TextBlock Text="Loading your page..."/>
+                </StackPanel>
+                
+                
+                
+                <StackPanel Name="youtubeprogressStack" Visibility="{Binding ProgressStackVisible}" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Getting data..." RequestedTheme="Dark" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ProgressRing Name="youtubeprogressRing" HorizontalAlignment="Center" VerticalAlignment="Center" IsActive="{Binding ProgressRingActive}"/>
+                </StackPanel>
+                <ScrollViewer Visibility="{Binding SelectionGridViewVisible}" VerticalScrollBarVisibility="Hidden" MaxWidth="500" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel Name="stackPanel" >
+
+                        <GridView Grid.Row="0"
+						Name="view" Height="Auto"
+						ItemTemplate="{StaticResource ViewDataTemplate}"
+						Margin="4,0,4,0"
+						SelectionChanged="view_SelectionChanged" ItemsSource="{Binding ListOfVideos}">
+                            <GridView.Header>
+                                <TextBlock RequestedTheme="Dark" Text="{Binding SelectedVideoTitle}"/>
+                            </GridView.Header>
+                        </GridView>
+                        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,12,0,0" Click="cancelButton_Click" />
+
+                    </StackPanel>
+                </ScrollViewer>
+
+            </Grid>
+            <Universal:AdMediatorControl Name="AdMediator_D0008C" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"  Height="50" Id="AdMediator-Id-1CAA50A5-9697-47D3-ABB1-5F7115023412" VerticalAlignment="Bottom"  Width="320" Visibility="Visible"/>
+            <Universal:AdMediatorControl Name="AdMediator_054507" Grid.Row="0" Grid.Column="2" Visibility="Collapsed" HorizontalAlignment="Right"  Height="600" Id="AdMediator-Id-E5EF87C7-3AFB-4B5B-9CCF-FB5BF7D1B345" VerticalAlignment="Center"  Width="160"/>
+
+        </Grid>
+        <!--<Pivot Name="pivot" Grid.Row="2">
+            <PivotItem Name="youtube">
+                <PivotItem.Header>
+                    <TextBlock Text="Youtube" FontSize="20" Foreground="White"/>
+                </PivotItem.Header>-->
+
+        <!--</PivotItem>
+            <PivotItem Name="metacafe">
+                <PivotItem.Header>
+                    <TextBlock Text="MetaCafe" FontSize="20" Foreground="White"/>
+                </PivotItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <WebView Name="metacafeWebElement" Grid.Row="0"/>
+                    <StackPanel Name="metacafeprogressStack" Visibility="Collapsed" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Getting data..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ProgressRing Name="metacafeprogressRing" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                    </StackPanel>
+
+                </Grid>
+            </PivotItem>
+
+        </Pivot>-->
+    </Grid>
+
+</Page>
